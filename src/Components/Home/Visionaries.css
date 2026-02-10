@@ -6,50 +6,6 @@
   overflow: hidden;
 }
 
-/* Brand color gradient shading with animation */
-.visionaries-section::before {
-  content: '';
-  position: absolute;
-  top: 20%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(132, 194, 37, 0.2) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(80px);
-  animation: float 8s ease-in-out infinite;
-}
-
-.visionaries-section::after {
-  content: '';
-  position: absolute;
-  bottom: 10%;
-  right: -10%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(132, 194, 37, 0.18) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(90px);
-  animation: float 10s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(30px, -30px);
-  }
-  50% {
-    transform: translate(-20px, 20px);
-  }
-  75% {
-    transform: translate(20px, 30px);
-  }
-}
-
 .visionaries-container {
   max-width: 1400px;
   margin: 0 auto;

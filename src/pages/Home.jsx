@@ -3,6 +3,7 @@ import Hero from '../Components/Home/Hero';
 import YoutubeStories from '../Components/Home/YoutubeStories';
 import Courses from '../Components/Home/Courses';
 import Visionaries from '../Components/Home/Visionaries';
+import Partnership from '../Components/Home/Partnership';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <YoutubeStories/>
       <Courses/>
       <Visionaries/>
+      <Partnership/>
     </div>
   );
 };
