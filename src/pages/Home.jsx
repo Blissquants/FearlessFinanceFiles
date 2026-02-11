@@ -4,6 +4,7 @@ import YoutubeStories from '../Components/Home/YoutubeStories';
 import Courses from '../Components/Home/Courses';
 import Visionaries from '../Components/Home/Visionaries';
 import Partnership from '../Components/Home/Partnership';
+import StayConnected from '../Components/Home/StayConnected';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Courses/>
       <Visionaries/>
       <Partnership/>
+      <StayConnected/>
     </div>
   );
 };
