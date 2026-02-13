@@ -71,18 +71,34 @@
 }
 
 .visionary-avatar {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
   background-color: #84c225;
-  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visionary-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.visionary-avatar-initials {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Arial', 'Helvetica', sans-serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  flex-shrink: 0;
+  color: #ffffff;
 }
 
 .visionary-info {
@@ -267,9 +283,12 @@
   }
 
   .visionary-avatar {
-    width: 70px;
-    height: 70px;
-    font-size: 1.75rem;
+    width: 90px;
+    height: 90px;
+  }
+
+  .visionary-avatar-initials {
+    font-size: 2rem;
   }
 
   .visionary-name {

@@ -1,5 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Visionaries.css';
+
+// Import your images here
+// import falguniImage from './assets/images/falguni-vahora.jpg';
+import ShilpaImage from '../../assets/images/shilpa-singh.png';
+import FalguniImage from '../../assets/images/falguni-vahora.jpg';
+
 
 const Visionaries = () => {
   const containerRef = useRef(null);
@@ -35,6 +41,7 @@ const Visionaries = () => {
       id: 1,
       name: 'Falguni Vahora',
       initials: 'FV',
+      image: FalguniImage,
       tagline: 'Turning Numbers into Narratives',
       roles: ['Fearless Finance Coach', 'Author', 'Trader', 'Investor'],
       quote: '"Financial awareness is the first step towards financial freedom. Let\'s take it together."',
@@ -48,6 +55,7 @@ const Visionaries = () => {
       id: 2,
       name: 'Shilpa Singh',
       initials: 'SS',
+      image: ShilpaImage,
       tagline: 'Making Finance Feel Like a Friend',
       roles: ['Finance Enthusiast', 'Mindset Coach', 'Community Builder'],
       quote: '"When you understand money, you understand freedom. It\'s never too early or too late to start."',
@@ -57,6 +65,24 @@ const Visionaries = () => {
       ]
     }
   ];
+
+  // Component to handle image with fallback
+  const AvatarImage = ({ image, initials, name }) => {
+    const [imageError, setImageError] = useState(false);
+
+    if (!image || imageError) {
+      return <div className="visionary-avatar-initials">{initials}</div>;
+    }
+
+    return (
+      <img 
+        src={image} 
+        alt={name}
+        className="visionary-avatar-image"
+        onError={() => setImageError(true)}
+      />
+    );
+  };
 
   return (
     <section className="visionaries-section">
@@ -73,7 +99,11 @@ const Visionaries = () => {
             <div key={person.id} className="visionary-card">
               <div className="visionary-header">
                 <div className="visionary-avatar">
-                  {person.initials}
+                  <AvatarImage 
+                    image={person.image} 
+                    initials={person.initials}
+                    name={person.name}
+                  />
                 </div>
                 <div className="visionary-info">
                   <h3 className="visionary-name">{person.name}</h3>
